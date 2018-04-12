@@ -13,33 +13,26 @@ app.use(bodyparser.urlencoded({extended: true}))
 app.use(bodyparser.json())
 
 // your code here...
-app.get('/', function(req, res){
+app.get('/', function (req, res) {
   res.sendFile('/index.html', {root: __dirname})
 })
-app.get('/reservation', function(req, res){
+app.get('/reservation', function (req, res) {
   res.redirect('./reservation.html')
 })
-app.get('/tables', function(req, res){
+app.get('/tables', function (req, res) {
   res.redirect('./tables.html')
 })
 
-
-
 app.post('/post', function (req, res) {
-data.push(req.body)
+  data.push(req.body)
 // console.log(data)
 })
 
-
-
-app.get('/getData', function(req, res){
+app.get('/getData', function (req, res) {
   // res.json(data)
   res.send(data)
   console.log(data)
 })
-
-
-
 
 var PORT = process.env.PORT || 3000
 // listening port
