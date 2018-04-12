@@ -4,9 +4,9 @@
 ##Contributors:
 * Jacob Flores
 * Hunter Wiley
-* Marc Chaing
+* Marc Chiang
 * Marisol Martinez
-* Cameron 4k
+* Cameron Kamkar
 * Preston Powell
 
 To see this revolutionary app in action go to the link below:
