@@ -6,21 +6,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Reservation Page</title>
+  <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans" rel="stylesheet">
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
 </head>
 
 <body>
 
-  <div class="container">
-  <div class="jumbotron jumbotron text-center">
-    <h1 class="display-4" style="font-family: 'Black Han Sans', sans-serif;">Hot Restaurant</h1>
-    <hr>
-    <h2 class="text-center">We only have 5 tables! Book your seat before they all are gone!</h2>
-  </div>
-  </div>
-  </div>
-
+    <div class='container'>
+        <div class="jumbotron jumbotron text-center" >
+            <h1 class="display-4" style="font-family: 'Black Han Sans', sans-serif;"><i class="fab fa-gripfire"></i>Hot Restaurant</h1>
+                <hr>
+            <h2 class="text-center">Make Your Reservation</h2>
+            <br>
+            <div class='container text center'>
+                <a href ='/tables'><button type='button' class='btn btn-primary btn-lg' id='view-tables' >View Tables</button></a>
+                <a href='/'><button class='btn btn-lg'id='home' style='background-color: white;'><i class="fas fa-home"></i></button></a>
+            </div>
+        </div>   
+    </div>
 
 
   <div class="container-fluid">
@@ -62,6 +67,7 @@
   crossorigin="anonymous"></script>
 
   <script>
+
     $('#submitBtn').on('click', function(){
       event.preventDefault()
       function Table(name, phone, email, userID) {
@@ -70,15 +76,12 @@
         this.email = email
         this.userID = userID
       }
-      var table = new Table ($('#name').val(), $('#phone').val(), $('#email').val(), $('#userID').val())
+      var table = new Table ($('#name').val(), $('#phone').val(), $('#phone').val(), $('#phone').val())
       console.log(table)
       $.post('/post', table)
-  
-    })    
-  
+    }) 
   
   </script>
 
 </body>
-
 </html>
