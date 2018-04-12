@@ -1,7 +1,7 @@
 # tablefindr
 ### Table Findr is a revolutionary way to book a table
 
-##Contributors:
+## Contributors:
 * Jacob Flores
 * Hunter Wiley
 * Marc Chiang
