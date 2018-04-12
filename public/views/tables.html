@@ -1,0 +1,137 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Express App</title>
+  <!-- complete bootstrap css -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="styles/style.css" type="text/css">
+</head>
+
+<body>
+    <div class='container'>
+        <div class="jumbotron jumbotron text-center" >
+            <h1 class="display-4" style="font-family: 'Black Han Sans', sans-serif;">Hot Restaurant</h1>
+             <hr>
+            <h2 class="text-center">We only have 5 tables! Book your seat before they all are gone!</h2>
+        </div>
+       
+    </div>
+  <a href="contact.html">Contact</a>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              Current Reservations
+            </h4>
+          </div>
+          <div class="panel-body" id="tableSelection">
+            <div class="well" id="tableWell-01">
+              <h2>
+                <span class="label label-primary">1</span>
+              </h2>
+            </div>
+            <div class="well" id="tableWell-11">
+                <h2>
+                  <span class="label label-primary">2</span>
+                </h2>
+            </div>
+            <div class="well" id="tableWell-21">
+                <h2>
+                  <span class="label label-primary">3</span>
+                </h2>
+            </div>
+            <div class="well" id="tableWell-31">
+                <h2>
+                  <span class="label label-primary">4</span>
+                </h2>
+            </div>
+            <div class="well" id="tableWell-41">
+                <h2>
+                  <span class="label label-primary">5</span>
+                </h2>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  Waitlist
+                </h4>
+              </div>
+              <div class="panel-body" id="waitlistSelection">
+                  <div class="well" id="waitWell-01">
+                      <h2>
+                        <span class="label label-primary">1</span>
+                      </h2>
+                    </div>
+                    <div class="well" id="waitWell-11">
+                        <h2>
+                          <span class="label label-primary">2</span>
+                        </h2>
+                    </div>
+                    <div class="well" id="waitWell-21">
+                        <h2>
+                          <span class="label label-primary">3</span>
+                        </h2>
+                    </div>
+                    <div class="well" id="waitWell-31">
+                        <h2>
+                          <span class="label label-primary">4</span>
+                        </h2>
+                    </div>
+                    <div class="well" id="waitWell-41">
+                        <h2>
+                          <span class="label label-primary">5</span>
+                        </h2>
+                    </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+
+  <!-- jquery cdn -->
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+  <!-- complete bootstrap js -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script>
+
+        function tablesClaimed(){
+    $.get('/getData', function(data){
+        for(var i=0; i<data.length; i++){
+            console.log(data[i])
+           if(i<5){ 
+            $('#tableWell-'+i+'1').append(data[i].name)
+           }
+           else{
+            $('#waitWell-'+(i-5)+'1').append(data[i].name)
+           }
+        }
+    })
+}
+
+
+tablesClaimed()
+
+</script>
+</body>
+</html>
